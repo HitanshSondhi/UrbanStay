@@ -47,4 +47,8 @@ public class Hotel {
 
     @Embedded
     private HotelContactInfo contactInfo;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private User owner;
 }
