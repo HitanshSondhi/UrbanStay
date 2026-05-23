@@ -1,12 +1,11 @@
 package com.UrbanStay.HotelBooking.Services;
 
 import com.UrbanStay.HotelBooking.DTO.HotelDTO;
-import com.UrbanStay.HotelBooking.Entity.Hotel;
 
 public interface HotelService {
-    HotelDTO createNewHotel(HotelDTO hotelDTO) ;
+    HotelDTO createNewHotel(HotelDTO hotelDTO);
     HotelDTO getHotelById(Long id);
-
     HotelDTO updateHotelById(Long id);
     Boolean deleteteHotelById(Long id);
+    HotelDTO activateHotelById(Long id);
 }

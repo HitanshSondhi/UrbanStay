@@ -56,4 +56,14 @@ public class HotelServiceImplementation implements HotelService {
         return true;
 
     }
+
+    @Override
+    public HotelDTO activateHotelById(Long id) {
+        log.info("Activating hotel by id:{}", id);
+        Hotel hotel = hotelRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Hotel id not found"));
+        hotel.setActive(true);
+        hotel = hotelRepository.save(hotel);
+        return modelMapper.map(hotel, HotelDTO.class);
+    }
 }
