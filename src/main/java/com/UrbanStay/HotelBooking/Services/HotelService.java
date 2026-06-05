@@ -7,5 +7,5 @@ public interface HotelService {
     HotelDTO getHotelById(Long id);
     HotelDTO updateHotelById(Long id);
     Boolean deleteteHotelById(Long id);
-    HotelDTO activateHotelById(Long id);
+    void activateHotel(Long hotelId);
 }

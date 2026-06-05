@@ -43,12 +43,11 @@ public class HotelAdminController {
                   .body("Failed to delete hotel");
       }
 
-      @PatchMapping("/{hotelId}/activate")
-      public ResponseEntity<HotelDTO> activateHotel(@PathVariable("hotelId") Long hotelId) {
-          log.info("Attempting to activate hotel with id: {}", hotelId);
-          HotelDTO hotel = hotelService.activateHotelById(hotelId);
-          return ResponseEntity.ok(hotel);
-      }
+    @PatchMapping("/{hotelId}")
+    public ResponseEntity<Void> activateHotel(@PathVariable Long hotelId) {
+        hotelService.activateHotel(hotelId);
+        return ResponseEntity.noContent().build();
+    }
 
       @PutMapping("/{hotelId}")
       public ResponseEntity<HotelDTO> updateHotelById(@PathVariable("hotelId") Long hotelId){
